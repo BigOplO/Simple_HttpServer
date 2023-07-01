@@ -72,12 +72,6 @@ int main(void) {
   server.RegisterHttpRequestHandler("/hello.html", HttpMethod::GET, send_html);
 
   try {
-    // std::cout << "Setting new limits for file descriptor count.." <<
-    // std::endl; ensure_enough_resource(RLIMIT_NOFILE, 15000, 15000);
-
-    // std::cout << "Setting new limits for number of threads.." << std::endl;
-    // ensure_enough_resource(RLIMIT_NPROC, 60000, 60000);
-
     std::cout << "Starting the web server.." << std::endl;
     server.Start();
     std::cout << "Server listening on " << host << ":" << port << std::endl;
